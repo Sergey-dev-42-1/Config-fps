@@ -1,6 +1,4 @@
-<template>
-  <p>111</p>
-</template>
+<template> </template>
 
 <script>
 export default {
