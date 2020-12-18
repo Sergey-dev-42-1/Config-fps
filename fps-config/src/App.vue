@@ -1,8 +1,11 @@
-<template> </template>
+<template>
+  <p>{{ this.$store.getters.currentMotherboard }}</p>
+</template>
 
 <script>
 export default {
   name: "App",
+
   components: {},
 };
 </script>
