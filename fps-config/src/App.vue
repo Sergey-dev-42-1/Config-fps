@@ -1,13 +1,25 @@
 <template>
-  <p>{{ this.$store.getters.currentMotherboard }}</p>
+  <div>
+    <Header></Header>
+    <p>{{ this.$store.getters.currentMotherboard }}</p>
+  </div>
 </template>
 
 <script>
+import Header from "./components/StaticElements/TheHeader";
 export default {
   name: "App",
 
-  components: {},
+  components: { Header },
 };
 </script>
 
-<style></style>
+<style>
+html {
+  box-sizing: border-box;
+  font-size: 20px;
+}
+body {
+  margin: 0;
+}
+</style>
