@@ -1,5 +1,5 @@
 <template>
-  <div class="config-container">
+  <div class="configuration-container">
     <span>Content</span>
   </div>
 </template>
@@ -9,8 +9,9 @@ export default {};
 </script>
 
 <style>
-.config-container {
+.configuration-container {
   background-color: orange;
-  flex-grow: 2;
+  grid-row: content-row / span 1;
+  grid-column: main-column / span 0;
 }
 </style>

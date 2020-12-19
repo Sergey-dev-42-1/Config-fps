@@ -10,7 +10,8 @@ export default {};
 
 <style>
 .fps-container {
-  background-color: gray;
-  flex-grow: 1;
+  background-color: rgb(56, 54, 51);
+  grid-row: content-row / span 1;
+  grid-column: secondary-column1 / column-end;
 }
 </style>
