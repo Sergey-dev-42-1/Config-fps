@@ -1,5 +1,5 @@
 <template>
-  <div class="config-container">
+  <div class="fps-container">
     <span>Content</span>
   </div>
 </template>
@@ -9,8 +9,8 @@ export default {};
 </script>
 
 <style>
-.config-container {
-  background-color: orange;
-  flex-grow: 2;
+.fps-container {
+  background-color: gray;
+  flex-grow: 1;
 }
 </style>

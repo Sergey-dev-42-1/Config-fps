@@ -21,10 +21,10 @@ export default {};
 <style scoped>
 .main-container {
   background-color: rgb(39, 39, 39);
-
+  line-height: 450%;
   font-family: "Bebas Neue", "Courier New", Courier;
   text-align: center;
-
+  min-height: 75px;
   margin: 0;
   display: flex;
   flex-basis: 0;
@@ -53,7 +53,7 @@ export default {};
 
 .action-button {
   padding: 0 10px;
-  line-height: 225%;
+
   color: rgb(238, 170, 62);
   height: 100%;
   width: 100%;

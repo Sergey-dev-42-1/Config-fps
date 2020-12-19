@@ -1,30 +1,37 @@
 <template>
   <div>
     <Header></Header>
-    <content>
+    <content class="content-container">
       <config-container></config-container>
+      <fps-evaluation></fps-evaluation>
     </content>
-    <p>{{ this.$store.getters.currentMotherboard }}</p>
   </div>
 </template>
 
 <script>
 import Header from "./components/StaticElements/TheHeader";
 import ConfigContainer from "./components/ConfigElements/TheConfigContainer";
+import FpsEvaluation from "./components/FpsEvaluationElements/FpsEvaluation";
 
 export default {
   name: "App",
 
-  components: { Header, ConfigContainer },
+  components: { Header, ConfigContainer, FpsEvaluation },
 };
 </script>
 
 <style>
-ConfigContainere > html {
+html {
   box-sizing: border-box;
   font-size: 20px;
+  overflow-y: hidden;
 }
 body {
   margin: 0;
+}
+.content-container {
+  height: 90vh;
+  display: flex;
+  flex-basis: 0;
 }
 </style>
