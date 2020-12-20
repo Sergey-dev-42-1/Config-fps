@@ -24,14 +24,14 @@ export default {
   grid-row: content-row / span 1;
   grid-column: main-column / span 2;
   display: flex;
+  flex-basis: 0;
   align-items: center;
   justify-content: center;
 }
 .configuration-container {
   background-color: rgb(255, 255, 255);
   width: 100%;
-  height: 80%;
-
+  min-height: 80%;
   display: flex;
   align-items: center;
   justify-content: center;
