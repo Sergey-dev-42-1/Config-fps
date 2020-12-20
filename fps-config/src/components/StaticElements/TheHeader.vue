@@ -18,8 +18,8 @@ export default {};
 
 <style scoped>
 .inner-header {
-  grid-row: header-row / content-row;
   grid-column: main-column / secondary-column1;
+  grid-row: header-row / content-row;
   background-color: black;
 }
 .title {
@@ -41,7 +41,7 @@ export default {};
   padding: 0 10px;
   color: rgb(238, 170, 62);
   flex-grow: 1;
-  font-size: 1.1rem;
+  text-align: center;
   display: flex;
   align-items: center;
   transition: background-color 0.15s linear;

@@ -1,6 +1,8 @@
 <template>
   <div class="fps-container">
-    <span>Content</span>
+    <div class="fps-info-box">
+      Добавьте элементы в сборку, результат появится здесь
+    </div>
   </div>
 </template>
 
@@ -10,8 +12,31 @@ export default {};
 
 <style>
 .fps-container {
-  background-color: rgb(56, 54, 51);
+  background-color: rgb(110, 110, 110);
   grid-row: content-row / span 1;
-  grid-column: secondary-column1 / column-end;
+  grid-column: secondary-column2 / column-end;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.fps-info-box {
+  background-color: rgb(206, 206, 206);
+  font-family: sans-serif;
+  text-align: center;
+  grid-row: content-row / span 1;
+  grid-column: secondary-column2 / column-end;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 80%;
+}
+.main-text {
+  color: #000;
+}
+.secondary text {
+  color: #000;
+  grid-row: content-row / span 1;
+  grid-column: secondary-column2 / column-end;
 }
 </style>
