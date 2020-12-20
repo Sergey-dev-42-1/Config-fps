@@ -30,7 +30,7 @@ body {
   margin: 0;
 }
 .main-container {
-  font-family: "Bebas Neue", "Courier New", Courier;
+  font-family: "Bebas Neue", sans-serif;
   margin: 0;
   width: 100%;
   min-width: 20vw;
@@ -39,7 +39,7 @@ body {
   min-height: 20vh;
 
   display: grid;
-  grid-template-columns: [main-column]2fr [secondary-column1]1fr [secondary-column2]1fr [column-end];
+  grid-template-columns: [main-column]4fr [secondary-column1]5fr [secondary-column2]5fr [column-end];
   grid-template-rows: [header-row]1fr [content-row]9fr[row-end];
 }
 </style>

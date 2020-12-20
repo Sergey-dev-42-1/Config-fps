@@ -1,13 +1,33 @@
 <template>
-  <div class="category-card">
+  <div @click="showList" class="category-card">
     <div class="category-picture"></div>
-    <div class="category-title">Motherboard</div>
+    <div class="category-title">{{ category }}</div>
+    <teleport to="body">
+      <list-items
+        @close="showList"
+        v-if="this.ListShown"
+        :category="category"
+      ></list-items>
+    </teleport>
   </div>
 </template>
 
 <script>
+import ListItems from "./ListItemsModal";
 export default {
-  components: {},
+  data() {
+    return {
+      ListShown: false,
+    };
+  },
+  props: { category: String },
+  components: { ListItems },
+  methods: {
+    showList() {
+      console.log(this.ListShown);
+      this.ListShown = !this.ListShown;
+    },
+  },
 };
 </script>
 

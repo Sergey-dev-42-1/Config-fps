@@ -1,12 +1,11 @@
 <template>
   <div class="config-main-container">
     <div class="configuration-container">
-      <category-card></category-card>
-      <category-card></category-card>
-      <category-card></category-card>
-      <category-card></category-card>
-      <category-card></category-card>
-      <category-card></category-card>
+      <category-card
+        v-for="(item, index) in categories"
+        :key="index"
+        :category="item"
+      ></category-card>
     </div>
   </div>
 </template>
@@ -14,6 +13,18 @@
 <script>
 import CategoryCard from "./CategoryCard.vue";
 export default {
+  data() {
+    return {
+      categories: [
+        "Материнская плата",
+        "Процессор",
+        "Видеокарта",
+        "Оперативная память",
+        "Накопитель данных",
+        "Блок питания",
+      ],
+    };
+  },
   components: { CategoryCard },
 };
 </script>
