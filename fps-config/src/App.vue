@@ -35,7 +35,7 @@ body {
   width: 100%;
   min-width: 20vw;
   max-width: 100vw;
-  height: 100%;
+  height: 100vh;
   min-height: 20vh;
 
   display: grid;

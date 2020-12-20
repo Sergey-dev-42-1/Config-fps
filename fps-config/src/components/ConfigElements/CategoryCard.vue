@@ -15,8 +15,8 @@ export default {
 .category-card {
   color: white;
   background-color: rgb(170, 170, 170);
-  width: 400px;
-  height: 400px;
+  width: 300px;
+  height: 300px;
   margin: 10px;
   border-radius: 10px;
   display: flex;

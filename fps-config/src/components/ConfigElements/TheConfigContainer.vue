@@ -31,10 +31,10 @@ export default {
   background-color: rgb(255, 255, 255);
   width: 100%;
   height: 80%;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-  gap: 10px 10px;
+
+  display: flex;
   align-items: center;
-  justify-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 </style>
