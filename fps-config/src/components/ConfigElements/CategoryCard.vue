@@ -33,6 +33,7 @@ export default {
       this.$emit("chooseItem", args);
     },
   },
+  emits: ["chooseItem"],
 };
 </script>
 

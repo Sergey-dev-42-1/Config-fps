@@ -1,7 +1,10 @@
 <template>
   <div class="fps-container">
-    <div class="fps-info-box">
+    <div v-if="!this.$store.getters.status" class="fps-info-box">
       Добавьте элементы в сборку, результат появится здесь
+    </div>
+    <div v-else class="fps-info-box">
+      Готово
     </div>
   </div>
 </template>

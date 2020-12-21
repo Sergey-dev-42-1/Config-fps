@@ -3,7 +3,7 @@
     <div @click="dropItem" class="material-icon">close</div>
     <div class="element-picture"></div>
     <div class="element-title">{{ item.title }}</div>
-    <div class="element-characteristics">{{ item.characteristics }}</div>
+
     <teleport to="body">
       <list-items
         @close="showList"

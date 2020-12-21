@@ -1,12 +1,14 @@
 <template>
   <div class="config-main-container">
     <div class="configuration-container">
-      <category-card
-        @chooseItem="setItem"
-        v-for="(item, index) in categories"
-        :key="index"
-        :category="item"
-      ></category-card>
+      <template v-if="changeCard">
+        <category-card
+          @chooseItem="setItem"
+          v-for="(item, index) in categories"
+          :key="index"
+          :category="item"
+        ></category-card>
+      </template>
     </div>
   </div>
 </template>
@@ -33,6 +35,9 @@ export default {
         this.$store.dispatch("setCurrentMotherboard", args.component);
       }
       //TODO:Методы для других категорий
+    },
+    changeCard() {
+      return true;
     },
   },
 };

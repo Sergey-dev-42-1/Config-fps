@@ -2,10 +2,11 @@
   <div class="item-body">
     <span class="item-pic"></span>
     <span class="item-title">{{ component.name }}</span>
-    <span class="item-characteristics">
-      {{ component.socket }} {{ component.maximumMemoryFrequency }}
-      {{ component.TypeOfSupportedMemory }}
-    </span>
+    <div class="element-characteristics">
+      <div v-for="(characteristic, index) in component" :key="index">
+        {{ characteristic }}
+      </div>
+    </div>
   </div>
 </template>
 
