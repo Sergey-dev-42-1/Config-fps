@@ -3,12 +3,14 @@
     <div class="category-picture"></div>
     <div class="category-title">{{ category }}</div>
     <teleport to="body">
-      <list-items-modal
-        @chooseItem="chooseItem"
-        @close="showList"
-        v-if="this.ListShown"
-        :category="category"
-      ></list-items-modal>
+      <transition name="fade">
+        <list-items-modal
+          @chooseItem="chooseItem"
+          @close="showList"
+          v-if="this.ListShown"
+          :category="category"
+        ></list-items-modal>
+      </transition>
     </teleport>
   </div>
 </template>

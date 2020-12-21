@@ -42,4 +42,8 @@ body {
   grid-template-columns: [main-column]4fr [secondary-column1]5fr [secondary-column2]5fr [column-end];
   grid-template-rows: [header-row]1fr [content-row]9fr[row-end];
 }
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
 </style>

@@ -1,35 +1,45 @@
 <template>
   <div @click="showList" class="element-card">
-    <div @click="dropItem" class="material-icon">close</div>
+    <div @click.stop="dropItem" class="material-icons btn-close">close</div>
     <div class="element-picture"></div>
-    <div class="element-title">{{ item.title }}</div>
+    <div class="element-title">{{ item.name }}</div>
 
     <teleport to="body">
-      <list-items
-        @close="showList"
-        v-if="this.ListShown"
-        :element="element"
-      ></list-items>
+      <transition name="fade">
+        <list-items-modal
+          @close="showList"
+          @chooseItem="chooseItem"
+          v-if="this.ListShown"
+          :category="this.category"
+        ></list-items-modal>
+      </transition>
     </teleport>
   </div>
 </template>
 
 <script>
-import ListItems from "./ListItemsModal";
+import ListItemsModal from "./ListItemsModal";
 export default {
   data() {
     return {
       ListShown: false,
     };
   },
-  props: { item: Object },
-  components: { ListItems },
+  props: { item: Object, category: String },
+  components: { ListItemsModal },
   methods: {
     showList() {
       console.log(this.ListShown);
       this.ListShown = !this.ListShown;
     },
+    dropItem() {
+      this.$emit("dropItem", this.category);
+    },
+    chooseItem(args) {
+      this.$emit("chooseItem", args);
+    },
   },
+  emits: ["dropItem", "chooseItem"],
 };
 </script>
 
@@ -44,16 +54,31 @@ export default {
   display: flex;
 
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
 }
 .element-picture {
   background-color: white;
   border-radius: 10px;
+  margin-top: 20px;
   width: 40%;
   height: 60%;
+  align-self: center;
+  justify-self: center;
 }
 .element-title {
   color: black;
+  align-self: center;
+  justify-self: flex-end;
+  margin-top: 20px;
+}
+.btn-close {
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  font-weight: bold;
+  color: #000000;
+  margin: 10px 10px 0 0;
+  background: transparent;
+  justify-self: flex-start;
+  align-self: flex-end;
 }
 </style>
