@@ -2,6 +2,7 @@
   <div class="config-main-container">
     <div class="configuration-container">
       <category-card
+        @chooseItem="setItem"
         v-for="(item, index) in categories"
         :key="index"
         :category="item"
@@ -26,6 +27,14 @@ export default {
     };
   },
   components: { CategoryCard },
+  methods: {
+    setItem(args) {
+      if (args.category === "Материнская плата") {
+        this.$store.dispatch("setCurrentMotherboard", args.component);
+      }
+      //TODO:Методы для других категорий
+    },
+  },
 };
 </script>
 

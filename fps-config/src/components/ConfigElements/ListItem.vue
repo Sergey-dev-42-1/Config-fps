@@ -1,22 +1,17 @@
 <template>
-  <div @click="chooseItem" class="item-body">
+  <div class="item-body">
     <span class="item-pic"></span>
-    <span class="item-title">Компонент</span>
-    <span class="item-characteristics"
-      >Характеристика 1 Характеристика 2 Характеристика 3
+    <span class="item-title">{{ component.name }}</span>
+    <span class="item-characteristics">
+      {{ component.socket }} {{ component.maximumMemoryFrequency }}
+      {{ component.TypeOfSupportedMemory }}
     </span>
   </div>
 </template>
 
 <script>
 export default {
-  methods: {
-    chooseItem() {
-      console.log("emitted");
-      this.$emit("close");
-    },
-  },
-  emits: ["close"],
+  props: { component: Object },
 };
 </script>
 

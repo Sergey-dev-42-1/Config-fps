@@ -7,10 +7,11 @@
       </header>
       <section class="modal-body">
         <list-item
-          @close="close"
+          @click="chooseItem(item)"
           class="list-item"
           v-for="(item, index) in items"
           :key="index"
+          :component="item"
         ></list-item>
       </section>
     </div>
@@ -24,16 +25,25 @@ export default {
     return {
       items: [
         {
-          name: "ASRock B460",
-          characteristics: ["B460", "DDR4", "2933"],
+          name: "Asrock B490",
+          socket: "LGA 1233",
+          maximumMemoryFrequency: "4933",
+          TypeOfSupportedMemory: "DDR8",
+          AvailabilityOfM2: true,
         },
         {
-          name: "ASRock B470",
-          characteristics: ["B460", "DDR4", "2933"],
+          name: "Asrock B460",
+          socket: "LGA 1200",
+          maximumMemoryFrequency: "2933",
+          TypeOfSupportedMemory: "DDR4",
+          AvailabilityOfM2: true,
         },
         {
-          name: "ASRock B480",
-          characteristics: ["B460", "DDR4", "2933"],
+          name: "Asrock B460",
+          socket: "LGA 1200",
+          maximumMemoryFrequency: "2933",
+          TypeOfSupportedMemory: "DDR4",
+          AvailabilityOfM2: true,
         },
       ],
     };
@@ -49,8 +59,13 @@ export default {
     close() {
       this.$emit("close");
     },
+    chooseItem(component) {
+      var category = this.category;
+      this.$emit("chooseItem", { component, category });
+      this.$emit("close");
+    },
   },
-  emits: ["close"],
+  emits: ["close", "chooseItem"],
   //Запросить список элементов на mounted
 };
 </script>

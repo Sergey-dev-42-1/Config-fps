@@ -1,51 +1,59 @@
 <template>
-  <div class="config-main-container">
-    <div class="configuration-container">
-      <category-card
-        v-for="(item, index) in this.categories"
-        :key="index"
-        :category="item"
-      ></category-card>
-    </div>
+  <div @click="showList" class="element-card">
+    <div @click="dropItem" class="material-icon">close</div>
+    <div class="element-picture"></div>
+    <div class="element-title">{{ item.title }}</div>
+    <div class="element-characteristics">{{ item.characteristics }}</div>
+    <teleport to="body">
+      <list-items
+        @close="showList"
+        v-if="this.ListShown"
+        :element="element"
+      ></list-items>
+    </teleport>
   </div>
 </template>
 
 <script>
-import CategoryCard from "./CategoryCard.vue";
+import ListItems from "./ListItemsModal";
 export default {
   data() {
     return {
-      categories: [
-        "Материнская плата",
-        "Процессор",
-        "Видеокарта",
-        "Оперативная память",
-        "Накопитель данных",
-        "Блок питания",
-      ],
+      ListShown: false,
     };
   },
-  components: { CategoryCard },
+  props: { item: Object },
+  components: { ListItems },
+  methods: {
+    showList() {
+      console.log(this.ListShown);
+      this.ListShown = !this.ListShown;
+    },
+  },
 };
 </script>
 
 <style>
-.config-main-container {
-  background-color: orange;
-  grid-row: content-row / span 1;
-  grid-column: main-column / span 2;
+.element-card {
+  color: white;
+  background-color: rgb(170, 170, 170);
+  width: 300px;
+  height: 300px;
+  margin: 10px;
+  border-radius: 10px;
   display: flex;
-  flex-basis: 0;
+
+  flex-direction: column;
   align-items: center;
   justify-content: center;
 }
-.configuration-container {
-  background-color: rgb(255, 255, 255);
-  width: 100%;
-  min-height: 80%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
+.element-picture {
+  background-color: white;
+  border-radius: 10px;
+  width: 40%;
+  height: 60%;
+}
+.element-title {
+  color: black;
 }
 </style>

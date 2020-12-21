@@ -3,17 +3,18 @@
     <div class="category-picture"></div>
     <div class="category-title">{{ category }}</div>
     <teleport to="body">
-      <list-items
+      <list-items-modal
+        @chooseItem="chooseItem"
         @close="showList"
         v-if="this.ListShown"
         :category="category"
-      ></list-items>
+      ></list-items-modal>
     </teleport>
   </div>
 </template>
 
 <script>
-import ListItems from "./ListItemsModal";
+import ListItemsModal from "./ListItemsModal";
 export default {
   data() {
     return {
@@ -21,11 +22,15 @@ export default {
     };
   },
   props: { category: String },
-  components: { ListItems },
+  components: { ListItemsModal },
   methods: {
     showList() {
       console.log(this.ListShown);
       this.ListShown = !this.ListShown;
+    },
+    //плохая реализация, проброс через несколько компонентов
+    chooseItem(args) {
+      this.$emit("chooseItem", args);
     },
   },
 };
