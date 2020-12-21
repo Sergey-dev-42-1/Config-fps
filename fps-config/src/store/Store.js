@@ -4,6 +4,7 @@ const state = {
   motherboard: null,
   videocard: true,
   cpu: true,
+  memory: null,
   data_drive: true,
   completed: false,
 };
@@ -16,6 +17,9 @@ const getters = {
   },
   currentCPU: (state) => {
     return state.cpu;
+  },
+  currentMemory: (state) => {
+    return state.memory;
   },
   currentDataDrive: (state) => {
     return state.data_drive;
@@ -33,6 +37,9 @@ const mutations = {
   },
   setCurrentCPU: (state, payload) => {
     state.cpu = payload;
+  },
+  setCurrentMemory: (state, payload) => {
+    state.memory = payload;
   },
   setCurrentDataDrive: (state, payload) => {
     state.data_drive = payload;
@@ -55,6 +62,10 @@ const actions = {
     await context.commit("setCurrentCPU", payload);
     await context.dispatch("checkCompletion");
   },
+  async setCurrentMemory(context, payload) {
+    await context.commit("setCurrentMemory", payload);
+    await context.dispatch("checkCompletion");
+  },
   async setCurrentDataDrive(context, payload) {
     await context.commit("setCurrentDataDrive", payload);
     await context.dispatch("checkCompletion");
@@ -63,6 +74,7 @@ const actions = {
     if (
       context.getters.currentMotherboard &&
       context.getters.currentCPU &&
+      context.getters.currentMemory &&
       context.getters.currentDataDrive &&
       context.getters.currentVideocard
     ) {

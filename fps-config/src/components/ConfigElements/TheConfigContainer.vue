@@ -33,7 +33,16 @@ export default {
     setItem(args) {
       if (args.category === "Материнская плата") {
         this.$store.dispatch("setCurrentMotherboard", args.component);
+      } else if (args.category === "Процессор") {
+        this.$store.dispatch("setCurrentCPU", args.component);
+      } else if (args.category === "Видеокарта") {
+        this.$store.dispatch("setCurrentVideocard", args.component);
+      } else if (args.category === "Оперативная память") {
+        this.$store.dispatch("setCurrentMemory", args.component);
+      } else if (args.category === "Накопитель данных") {
+        this.$store.dispatch("setCurrentDataDrive", args.component);
       }
+
       //TODO:Методы для других категорий
     },
     changeCard() {
