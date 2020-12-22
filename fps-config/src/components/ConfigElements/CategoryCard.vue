@@ -1,6 +1,6 @@
 <template>
   <div @click="showList" class="category-card">
-    <div class="category-picture"></div>
+    <img class="category-picture" :src="categoryImagePath" />
     <div class="category-title">{{ category }}</div>
     <teleport to="body">
       <transition name="fade">
@@ -17,11 +17,21 @@
 
 <script>
 import ListItemsModal from "./ListItemsModal";
+var images = require.context("../../../public/img/", false, /\....$/);
 export default {
   data() {
     return {
       ListShown: false,
     };
+  },
+  computed: {
+    categoryImagePath: function() {
+      try {
+        return images("./" + this.category + ".jpg");
+      } catch {
+        return images("./" + this.category + ".png");
+      }
+    },
   },
   props: { category: String },
   components: { ListItemsModal },
@@ -42,10 +52,11 @@ export default {
 <style>
 .category-card {
   color: white;
-  background-color: rgb(170, 170, 170);
+
   width: 300px;
   height: 300px;
   margin: 10px;
+  box-shadow: 10px 5px 10px 5px grey;
   border-radius: 10px;
   display: flex;
 
@@ -54,10 +65,10 @@ export default {
   justify-content: center;
 }
 .category-picture {
-  background-color: white;
+  background-color: transparent;
   border-radius: 10px;
-  width: 40%;
-  height: 60%;
+  width: 200px;
+  max-height: 300px;
 }
 .category-title {
   color: black;
