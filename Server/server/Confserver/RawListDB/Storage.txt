@@ -1,0 +1,17 @@
+list.append(models.Storage.objects.create( Title = "Toshiba P300",
+Type = "HDD",
+Volume = 1000,
+RecordingSpeed = 196,
+ReadingSpeed = 196
+
+list.append(models.Storage.objects.create( Title = "480 ГБ SSD M.2 накопитель WD Green",
+Type = "M.2",
+Volume = 480,
+RecordingSpeed = 545,
+ReadingSpeed = 545
+
+list.append(models.Storage.objects.create( Title = "Samsung 860 EVO",
+Type = "SSD",
+Volume = 500,
+RecordingSpeed = 520,
+ReadingSpeed = 550
