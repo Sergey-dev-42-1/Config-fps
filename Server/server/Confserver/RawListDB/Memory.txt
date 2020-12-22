@@ -1,0 +1,17 @@
+list.append(models.RAM.objects.create(Title = "Neo Forza ENCKE",
+Type = "DDR4",
+Volume = 16,
+Frequency = 3200,
+Timings = 16))
+
+list.append(models.RAM.objects.create(Title = "Patriot Viper 4 Steel",
+Type = "DDR4",
+Volume = 16,
+Frequency = 3000,
+Timings = 16))
+
+list.append(models.RAM.objects.create(Title = "HyperX FURY Black",
+Type = "DDR4",
+Volume = 16,
+Frequency = 3200,
+Timings = 16))

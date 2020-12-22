@@ -1,0 +1,17 @@
+list.append(models.Motherboard.objects.create(Title = "MSI B460M-A PRO",
+Socket="LGA 1200",
+TypeOfSupportedMemory = "DDR4",
+MaximumSupportedMemoryFrequency = 2933,
+AvailabilityOfM2 = True))
+
+list.append(models.Motherboard.objects.create(Title = "MSI MAG B460 TORPEDO",
+Socket="LGA 1200",
+TypeOfSupportedMemory = "DDR4",
+MaximumSupportedMemoryFrequency = 2933,
+AvailabilityOfM2 = True))
+
+list.append(models.Motherboard.objects.create(Title = "ASRock B460M Steel Legend",
+Socket="LGA 1200",
+TypeOfSupportedMemory = "DDR4",
+MaximumSupportedMemoryFrequency = 2933,
+AvailabilityOfM2 = True))
