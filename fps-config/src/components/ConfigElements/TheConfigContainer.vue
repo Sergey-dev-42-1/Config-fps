@@ -127,13 +127,15 @@ export default {
   grid-column: main-column / span 2;
   display: flex;
   flex-basis: 0;
+  height: 100%;
   align-items: center;
   justify-content: center;
 }
 .configuration-container {
   background-color: rgb(255, 255, 255);
   width: 100%;
-  min-height: 80%;
+  height: 80%;
+  max-height: 80%;
   display: flex;
   align-items: center;
   justify-content: center;

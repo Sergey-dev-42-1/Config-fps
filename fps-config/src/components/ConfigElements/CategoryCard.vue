@@ -54,7 +54,7 @@ export default {
   color: white;
 
   width: 300px;
-  height: 300px;
+  height: 270px;
   margin: 10px;
   box-shadow: 10px 5px 10px 5px grey;
   border-radius: 10px;
