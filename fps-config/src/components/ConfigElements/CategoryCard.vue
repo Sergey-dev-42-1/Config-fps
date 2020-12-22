@@ -56,7 +56,7 @@ export default {
   width: 300px;
   height: 270px;
   margin: 10px;
-  box-shadow: 10px 5px 10px 5px grey;
+  box-shadow: 0 0 10px 5px grey;
   border-radius: 10px;
   display: flex;
 
@@ -66,7 +66,7 @@ export default {
   transition: box-shadow 0.5s;
 }
 .category-card:hover {
-  box-shadow: 10px 5px 20px 5px orange;
+  box-shadow: 0 0 0px 5px orange;
 }
 .category-picture {
   background-color: transparent;

@@ -42,12 +42,13 @@ export default {
 <style scoped>
 .game-grid-container {
   background-color: white;
-  margin: 10px 10px 0 10px;
-  width: 100%;
+  margin: 10px;
+  width: 90%;
   height: 342.5px;
   display: grid;
   grid-template: 1fr / 1fr 9fr;
   border-radius: 10px;
+  align-self: center;
 }
 .game-card {
   color: white;

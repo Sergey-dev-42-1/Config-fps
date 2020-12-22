@@ -38,8 +38,11 @@ export default {
   width: 100%;
   height: 80%;
   overflow: auto;
-  overflow-x: hidden;
 }
+.fps-info-box::-webkit-scrollbar {
+  width: 0 !important;
+}
+
 .fps-info-box-empty::-webkit-scrollbar {
   display: none;
 }
