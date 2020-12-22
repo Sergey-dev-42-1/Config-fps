@@ -17,7 +17,7 @@
 
 <script>
 import ListItemsModal from "./ListItemsModal";
-var images = require.context("../../../public/img/", false, /\....$/);
+var images = require.context("../../../public/img/categories", false, /\....$/);
 export default {
   data() {
     return {

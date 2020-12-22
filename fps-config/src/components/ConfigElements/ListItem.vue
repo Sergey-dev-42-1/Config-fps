@@ -1,6 +1,6 @@
 <template>
   <div class="item-body">
-    <img class="item-pic" :src="" />
+    <img class="item-pic" />
     <span class="item-title">{{ component.name }}</span>
     <div class="element-characteristics">
       <div v-for="(characteristic, index) in component" :key="index">
@@ -11,11 +11,13 @@
 </template>
 
 <script>
-var images = require.context("../../../public/img/items", false, /\....$/);
+//var images = require.context("../../../public/img/items", false, /\....$/);
 export default {
   props: { component: Object },
   computed: {
-    itemImgSource: function() {},
+    itemImgSource: function() {
+      return 0;
+    },
   },
 };
 </script>
