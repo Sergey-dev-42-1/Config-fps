@@ -63,14 +63,23 @@ export default {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  transition: box-shadow 0.5s;
+}
+.category-card:hover {
+  box-shadow: 10px 5px 20px 5px orange;
 }
 .category-picture {
   background-color: transparent;
   border-radius: 10px;
   width: 200px;
   max-height: 300px;
+  margin-top: auto;
 }
+
 .category-title {
   color: black;
+  justify-self: flex-end;
+  margin-top: auto;
+  margin-bottom: 10px;
 }
 </style>

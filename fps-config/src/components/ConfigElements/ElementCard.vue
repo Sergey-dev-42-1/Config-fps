@@ -1,7 +1,7 @@
 <template>
-  <div @click="showList" class="element-card">
+  <div @click="showList" class="category-card">
     <div @click.stop="dropItem" class="material-icons btn-close">close</div>
-    <div class="element-picture"></div>
+    <div class="category-picture"></div>
     <div class="element-title">{{ item.name }}</div>
 
     <teleport to="body">
@@ -44,31 +44,12 @@ export default {
 </script>
 
 <style>
-.element-card {
-  color: white;
-  background-color: rgb(170, 170, 170);
-  width: 300px;
-  height: 300px;
-  margin: 10px;
-  border-radius: 10px;
-  display: flex;
-
-  flex-direction: column;
-}
-.element-picture {
-  background-color: white;
-  border-radius: 10px;
-  margin-top: 20px;
-  width: 40%;
-  height: 60%;
-  align-self: center;
-  justify-self: center;
-}
 .element-title {
   color: black;
   align-self: center;
   justify-self: flex-end;
   margin-top: 20px;
+  margin-bottom: 10px;
 }
 .btn-close {
   border: none;
